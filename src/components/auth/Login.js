@@ -18,38 +18,48 @@ const Login = (props) => {
   };
   return (
     <Fragment>
-      <div className='form-container'>
-        <h1 className='large text-primary'>Sign In</h1>
-        <p className='lead'>
-          <i className='fas fa-user' /> Sign Into Your Account
-        </p>
-        <form className='form' onSubmit={onSubmit}>
-          <div className='form-group'>
-            <input
-              type='email'
-              placeholder='Email Address'
-              name='email'
-              value={email}
-              onChange={onChange}
-              required
-            />
+      <section className="landing">
+        <div className="dark-overlay">
+          <div className="landing-inner">
+            <div className="form-container">
+              <h1 className="large">Sign In</h1>
+              <p className="lead">
+                <i className="fas fa-user" /> Sign Into Your Account
+              </p>
+              <form className="form" onSubmit={onSubmit}>
+                <div className="form-group">
+                  <input
+                    type="email"
+                    placeholder="Email Address"
+                    name="email"
+                    value={email}
+                    onChange={onChange}
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <input
+                    type="password"
+                    placeholder="Password"
+                    name="password"
+                    value={password}
+                    onChange={onChange}
+                    minLength="6"
+                  />
+                </div>
+                <input
+                  type="submit"
+                  className="btn btn-primary btn-block"
+                  value="Login"
+                />
+              </form>
+              <p className="my-1">
+                Don't have an account? <Link to="/register">Sign Up</Link>
+              </p>
+            </div>
           </div>
-          <div className='form-group'>
-            <input
-              type='password'
-              placeholder='Password'
-              name='password'
-              value={password}
-              onChange={onChange}
-              minLength='6'
-            />
-          </div>
-          <input type='submit' className='btn btn-primary' value='Login' />
-        </form>
-        <p className='my-1'>
-          Don't have an account? <Link to='/register'>Sign Up</Link>
-        </p>
-      </div>
+        </div>
+      </section>
     </Fragment>
   );
 };
