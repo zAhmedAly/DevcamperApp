@@ -8,9 +8,10 @@ const Register = (props) => {
     email: '',
     password: '',
     password2: '',
+    type: 'user',
   });
 
-  const { name, email, password, password2 } = formData;
+  const { name, email, password, password2, type } = formData;
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
@@ -25,7 +26,7 @@ const Register = (props) => {
           <div className='landing-inner'> */}
       <div className='form-container'>
         <h1 className='my-1 text-primary'>
-          <i className='fas fa-user-plus' /> Register New User
+          <i className='fas fa-user-plus' /> Register User
         </h1>
         {/* <p className='lead'>
           <i className='fas fa-user' /> Create Your Account
@@ -71,15 +72,37 @@ const Register = (props) => {
               onChange={onChange}
             />
           </div>
+          {/* <h5>Contact Type</h5> */}
+          <div className='form-group'>
+            <label htmlFor='type' className='medium'>
+              User Role :{' '}
+            </label>{' '}
+            <input
+              type='radio'
+              name='type'
+              value='user'
+              checked={type === 'user'}
+              onChange={onChange}
+            />{' '}
+            User{' '}
+            <input
+              type='radio'
+              name='type'
+              value='publisher'
+              checked={type === 'publisher'}
+              onChange={onChange}
+            />{' '}
+            Publisher
+          </div>
           <input
             type='submit'
-            className='btn btn-primary btn-block'
+            className='btn btn-primary btn-block my-1'
             value='Register'
           />
         </form>
 
         <div className='loginSignUpSeparator'>
-          <span class='textInSeparator'>or</span>
+          <span className='textInSeparator'>or</span>
           <p>
             Already have an account?{' '}
             <Link to='/login'>

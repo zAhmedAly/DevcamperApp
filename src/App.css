@@ -8,7 +8,7 @@
 } */
 
 :root {
-  --primary-color: #292a7e;
+  --primary-color: #00348f;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -22,8 +22,10 @@
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
-  font-size: 1rem;
+  /* font-family: 'Raleway', sans-serif; */
+  /* font-size: 1rem; */
+  font-family: HelveticaNeue, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 93.75%;
   line-height: 1.6;
   background-color: #fff;
   color: #333;
@@ -362,6 +364,13 @@ h3 {
   border: 1px solid #ccc;
 }
 
+.form input[type='radio'] {
+  padding: 0.4rem;
+  margin-left: 1.25rem;
+  font-size: 1.2rem;
+  font: inherit;
+}
+
 .form input[type='submit'],
 button {
   font: inherit;
@@ -407,7 +416,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0.25rem 2rem;
   position: fixed;
   z-index: 1;
   width: 100%;

@@ -25,7 +25,7 @@ const Login = (props) => {
       <div className='form-container'>
         {/* <img src={logo} alt='DevCamper' className='my-2' /> */}
         <h1 className='text-primary my-1'>
-          <i className='fas fa-user' /> DevCamper Log In
+          <i className='fas fa-user' /> User Log In
         </h1>
         {/* <p className='lead'>
           <i className='fas fa-user' /> Sign Into Your Account
@@ -61,7 +61,7 @@ const Login = (props) => {
           <Link to='/resetPassword'>Having trouble logging in?</Link>
         </div>
         <div className='loginSignUpSeparator'>
-          <span class='textInSeparator'>or</span>
+          <span className='textInSeparator'>or</span>
           <p>
             Don't have an account?{' '}
             <Link to='/register'>
