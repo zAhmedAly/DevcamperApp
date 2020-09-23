@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import logo from '../../img/logo.png';
 
 const Login = (props) => {
   const [formData, setFormData] = useState({
@@ -18,48 +19,60 @@ const Login = (props) => {
   };
   return (
     <Fragment>
-      <section className="landing">
-        <div className="dark-overlay">
-          <div className="landing-inner">
-            <div className="form-container">
-              <h1 className="large">Sign In</h1>
-              <p className="lead">
-                <i className="fas fa-user" /> Sign Into Your Account
-              </p>
-              <form className="form" onSubmit={onSubmit}>
-                <div className="form-group">
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    name="email"
-                    value={email}
-                    onChange={onChange}
-                    required
-                  />
-                </div>
-                <div className="form-group">
-                  <input
-                    type="password"
-                    placeholder="Password"
-                    name="password"
-                    value={password}
-                    onChange={onChange}
-                    minLength="6"
-                  />
-                </div>
-                <input
-                  type="submit"
-                  className="btn btn-primary btn-block"
-                  value="Login"
-                />
-              </form>
-              <p className="my-1">
-                Don't have an account? <Link to="/register">Sign Up</Link>
-              </p>
-            </div>
+      {/* <section className='landing'>
+        <div className='dark-overlay'>
+          <div className='landing-inner'> */}
+      <div className='form-container'>
+        {/* <img src={logo} alt='DevCamper' className='my-2' /> */}
+        <h1 className='text-primary my-1'>
+          <i className='fas fa-user' /> DevCamper Log In
+        </h1>
+        {/* <p className='lead'>
+          <i className='fas fa-user' /> Sign Into Your Account
+        </p> */}
+        <form className='form' onSubmit={onSubmit}>
+          <div className='form-group'>
+            <input
+              type='email'
+              placeholder='Email Address'
+              name='email'
+              value={email}
+              onChange={onChange}
+              required
+            />
           </div>
+          <div className='form-group'>
+            <input
+              type='password'
+              placeholder='Password'
+              name='password'
+              value={password}
+              onChange={onChange}
+              minLength='6'
+            />
+          </div>
+          <input
+            type='submit'
+            className='btn btn-primary btn-block'
+            value='Log In'
+          />
+        </form>
+        <div className='forgotLink text-primary'>
+          <Link to='/resetPassword'>Having trouble logging in?</Link>
         </div>
-      </section>
+        <div className='loginSignUpSeparator'>
+          <span class='textInSeparator'>or</span>
+          <p>
+            Don't have an account?{' '}
+            <Link to='/register'>
+              <strong>Register</strong>
+            </Link>
+          </p>
+        </div>
+      </div>
+      {/* </div>
+        </div>
+      </section> */}
     </Fragment>
   );
 };

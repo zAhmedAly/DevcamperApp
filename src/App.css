@@ -8,7 +8,7 @@
 } */
 
 :root {
-  --primary-color: #013faa;
+  --primary-color: #292a7e;
   --dark-color: #333333;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
@@ -50,6 +50,27 @@ img {
   padding: 0 2rem;
   margin-top: 6rem;
   margin-bottom: 3rem;
+}
+
+.loginSignUpSeparator {
+  border-top: 1px solid #cbd2d6;
+  position: relative;
+  margin: 25px 0 10px;
+  text-align: center;
+}
+
+.loginSignUpSeparator .textInSeparator {
+  background-color: #fff;
+  padding: 0 0.5em;
+  position: relative;
+  color: #6c7378;
+  top: -0.7em;
+}
+
+.forgotLink {
+  margin: 20px 0;
+  text-align: center;
+  border-bottom: 0;
 }
 
 /* Text Styles*/
@@ -155,7 +176,7 @@ img {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
 .grid-3 {
@@ -291,16 +312,6 @@ img {
   margin: 1.5rem 0;
 }
 
-/* Overlay */
-.dark-overlay {
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 /* Forms */
 
 .form-group {
@@ -318,6 +329,8 @@ img {
   padding: 0 2rem;
   margin-top: 6rem;
   margin-bottom: 3rem;
+  border: 1px solid lightgray;
+  border-radius: 5px;
 }
 
 .form-container h1,
@@ -333,7 +346,7 @@ h3 {
 .form .form-text {
   display: block;
   margin-top: 0.3rem;
-  color: rgb(247, 243, 243);
+  color: gray;
 }
 
 .form input[type='text'],
@@ -400,7 +413,7 @@ button {
   width: 100%;
   top: 0;
   border-bottom: solid 1px var(--primary-color);
-  opacity: 0.9;
+  /* opacity: 0.9; */
 }
 
 .navbar ul {
@@ -439,6 +452,16 @@ button {
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+
+/* Overlay */
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Profiles Page */
