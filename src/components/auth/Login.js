@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import logo from '../../img/logo.png';
 
 const Login = (props) => {
   const [formData, setFormData] = useState({
