@@ -1,8 +1,10 @@
 import React, { Fragment, useState } from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { login } from '../../actions/auth';
 
-const Login = (props) => {
+const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -14,21 +16,20 @@ const Login = (props) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    // login(email, password);
+    login(email, password);
   };
+
+  if (isAuthenticated) {
+    return <Redirect to='/bootcamps' />;
+  }
+
   return (
     <Fragment>
-      {/* <section className='landing'>
-        <div className='dark-overlay'>
-          <div className='landing-inner'> */}
       <div className='form-container'>
-        {/* <img src={logo} alt='DevCamper' className='my-2' /> */}
         <h1 className='text-primary my-1'>
           <i className='fas fa-user' /> User Log In
         </h1>
-        {/* <p className='lead'>
-          <i className='fas fa-user' /> Sign Into Your Account
-        </p> */}
+
         <form className='form' onSubmit={onSubmit}>
           <div className='form-group'>
             <input
@@ -69,13 +70,17 @@ const Login = (props) => {
           </p>
         </div>
       </div>
-      {/* </div>
-        </div>
-      </section> */}
     </Fragment>
   );
 };
 
-Login.propTypes = {};
+Login.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool,
+};
 
-export default Login;
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.auth.isAuthenticated,
+});
+
+export default connect(mapStateToProps, { login })(Login);

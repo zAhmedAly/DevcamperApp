@@ -1,12 +1,10 @@
 import {
-  GET_POSTS,
-  POST_ERROR,
-  UPDATE_LIKES,
-  DELETE_POST,
-  ADD_POST,
-  GET_POST,
-  ADD_COMMENT,
-  REMOVE_COMMENT,
+  GET_BOOTCAMPS,
+  GET_BOOTCAMP,
+  ADD_BOOTCAMP,
+  UPDATE_BOOTCAMP,
+  DELETE_BOOTCAMP,
+  BOOTCAMP_ERROR,
 } from '../actions/types';
 
 const initialState = {
@@ -16,4 +14,11 @@ const initialState = {
   error: {},
 };
 
-export default function (state = initialState, action) {}
+export default function (state = initialState, action) {
+  const { type, payload } = action;
+
+  switch (type) {
+    default:
+      return state;
+  }
+}
