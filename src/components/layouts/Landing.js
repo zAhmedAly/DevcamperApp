@@ -16,39 +16,39 @@ const Landing = () => {
   };
 
   return (
-    <section className='landing'>
-      <div className='dark-overlay'>
-        <div className='landing-inner'>
-          <h1 className='x-large'>Find a Coding Bootcamp</h1>
-          <p className='lead'>
+    <section className="landing">
+      <div className="dark-overlay">
+        <div className="landing-inner">
+          <h1 className="x-large">Find a Coding Bootcamp</h1>
+          <p className="lead">
             Search, Rate and Read reviews on coding bootcamps
           </p>
-          <form className='form' onSubmit={onSubmit}>
-            <div className='grid-2'>
-              <div className='form-group'>
+          <form className="form" onSubmit={onSubmit}>
+            <div className="grid-2">
+              <div className="form-group">
                 <input
-                  type='text'
-                  name='miles'
+                  type="text"
+                  name="miles"
                   value={miles}
-                  placeholder='Miles From'
+                  placeholder="Miles From"
                   onChange={onChange}
                 />
               </div>
 
-              <div className='form-group'>
+              <div className="form-group">
                 <input
-                  type='text'
-                  name='zipcode'
+                  type="text"
+                  name="zipcode"
                   value={zipcode}
-                  placeholder='Enter Zipcode'
+                  placeholder="Enter Zipcode"
                   onChange={onChange}
                 />
               </div>
             </div>
             <input
-              type='submit'
-              value='Find Bootcamps'
-              className='btn btn-primary btn-block'
+              type="submit"
+              value="Find Bootcamps"
+              className="btn btn-primary btn-block"
             />
           </form>
           {/* <br></br>
