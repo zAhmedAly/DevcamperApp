@@ -239,11 +239,17 @@ img {
 }
 
 .alert {
-  padding: 0.8rem;
-  margin: 1rem 0;
+  max-width: 500px;
+  padding: 0.2rem;
+  margin: 0rem auto;
+  margin-bottom: 0.25rem;
   opacity: 0.9;
   background: var(--light-color);
   color: #333;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  font-size: 80%;
+  text-align: center;
 }
 
 .btn-primary,

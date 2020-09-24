@@ -1,11 +1,11 @@
-import {
-  GET_BOOTCAMPS,
-  GET_BOOTCAMP,
-  ADD_BOOTCAMP,
-  UPDATE_BOOTCAMP,
-  DELETE_BOOTCAMP,
-  BOOTCAMP_ERROR,
-} from '../actions/types';
+// import {
+//   GET_BOOTCAMPS,
+//   GET_BOOTCAMP,
+//   ADD_BOOTCAMP,
+//   UPDATE_BOOTCAMP,
+//   DELETE_BOOTCAMP,
+//   BOOTCAMP_ERROR,
+// } from '../actions/types';
 
 const initialState = {
   bootcamps: [],
@@ -15,9 +15,9 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-  const { type, payload } = action;
+  //const { type, payload } = action;
 
-  switch (type) {
+  switch (action.type) {
     default:
       return state;
   }

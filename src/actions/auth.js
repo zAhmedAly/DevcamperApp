@@ -24,24 +24,36 @@ export const loadUser = () => async (dispatch) => {
     });
   } catch (err) {
     console.log('XXXXXXXXXXXXXXX loadUser ---> err = ', err);
+    console.log('XXXXXXXXXXXXXXX loadUser ---> err.response = ', err.response);
 
-    if (!err.response) {
-      console.log('XXXXXXXXXXXXXXX loadUser ---> !err.response = ', err);
+    // http status code
+    const code = err.response.status;
+    console.log('XXXXXXXXXXXXXXX loadUser ---> err.response.status = ', code);
 
-      dispatch(
-        setAlert('Network Error not able to connect to backend', 'danger')
-      );
+    // response data
+    const response = err.response.data;
+    console.log('XXXXXXXXXXXXXXX loadUser ---> err.response.data = ', response);
+    const statusText = err.response.statusText;
+    console.log(
+      'XXXXXXXXXXXXXXX loadUser ---> err.response.statusText = ',
+      statusText
+    );
+
+    console.log(err.response.data);
+    const errors = err.response.data.errors;
+
+    console.log(
+      'XXXXXXXXXXXXXXX loadUser ---> err.response.data.errors = ',
+      errors
+    );
+
+    if (errors) {
+      errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
     } else {
-      // http status code
-      const code = err.response.status;
-      // response data
-      const response = err.response.data;
+      if (code === 500) {
+        dispatch(setAlert(`${statusText} - Please try later`, 'danger'));
+      }
     }
-    // const errors = err.response.data.errors;
-
-    // if (errors) {
-    //   errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
-    // }
 
     dispatch({
       type: AUTH_ERROR,
@@ -60,10 +72,42 @@ export const register = (formData) => async (dispatch) => {
     });
     dispatch(loadUser());
   } catch (err) {
+    // const errors = err.response.data.errors;
+
+    // if (errors) {
+    //   errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    // }
+
+    console.log('XXXXXXXXXXXXXXX register ---> err = ', err);
+    console.log('XXXXXXXXXXXXXXX register ---> err.response = ', err.response);
+
+    // http status code
+    const code = err.response.status;
+    console.log('XXXXXXXXXXXXXXX register ---> err.response.status = ', code);
+
+    // response data
+    const response = err.response.data;
+    console.log('XXXXXXXXXXXXXXX register ---> err.response.data = ', response);
+    const statusText = err.response.statusText;
+    console.log(
+      'XXXXXXXXXXXXXXX register ---> err.response.statusText = ',
+      statusText
+    );
+
+    console.log(err.response.data);
     const errors = err.response.data.errors;
+
+    console.log(
+      'XXXXXXXXXXXXXXX register ---> err.response.data.errors = ',
+      errors
+    );
 
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    } else {
+      if (code === 500) {
+        dispatch(setAlert(`${statusText} - Please try later`, 'danger'));
+      }
     }
 
     dispatch({
@@ -86,11 +130,39 @@ export const login = (email, password) => async (dispatch) => {
 
     dispatch(loadUser());
   } catch (err) {
+    // ***************
+    console.log('XXXXXXXXXXXXXXX login ---> err = ', err);
+    console.log('XXXXXXXXXXXXXXX login ---> err.response = ', err.response);
+
+    // http status code
+    const code = err.response.status;
+    console.log('XXXXXXXXXXXXXXX login ---> err.response.status = ', code);
+
+    // response data
+    const response = err.response.data;
+    console.log('XXXXXXXXXXXXXXX login ---> err.response.data = ', response);
+    const statusText = err.response.statusText;
+    console.log(
+      'XXXXXXXXXXXXXXX login ---> err.response.statusText = ',
+      statusText
+    );
+
+    // ***************
+
     console.log(err.response.data);
     const errors = err.response.data.errors;
 
+    console.log(
+      'XXXXXXXXXXXXXXX login ---> err.response.data.errors = ',
+      errors
+    );
+
     if (errors) {
       errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    } else {
+      if (code === 500) {
+        dispatch(setAlert(`${statusText} - Please try later`, 'danger'));
+      }
     }
 
     dispatch({

@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const ResetPassword = (props) => {
@@ -53,6 +53,6 @@ const ResetPassword = (props) => {
   );
 };
 
-ResetPassword.propTypes = {};
+//ResetPassword.propTypes = {};
 
 export default ResetPassword;

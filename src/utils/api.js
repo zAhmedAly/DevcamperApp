@@ -18,7 +18,10 @@ const api = axios.create({
 api.interceptors.response.use(
   (res) => res,
   (err) => {
-    console.log('XXXX API interceptors err = ', err);
+    if (!err.response) {
+      alert('Internal Server Error - Please try later');
+    }
+    console.log('api.interceptors.response err ==> ', err);
     if (err.response.data.msg === 'Token is not valid') {
       store.dispatch({ type: LOGOUT });
     }

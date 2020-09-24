@@ -20,51 +20,49 @@ const Login = ({ login, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/bootcamps" />;
+    return <Redirect to='/bootcamps' />;
   }
 
   return (
     <Fragment>
-      <div className="form-container">
-        <h1 className="text-primary my-1">
-          <i className="fas fa-user" /> User Log In
+      <div className='form-container'>
+        <h1 className='text-primary my-1'>
+          <i className='fas fa-user' /> User Log In
         </h1>
 
-        <form className="form" onSubmit={onSubmit}>
-          <div className="form-group">
+        <form className='form' onSubmit={onSubmit}>
+          <div className='form-group'>
             <input
-              type="email"
-              placeholder="Email Address"
-              name="email"
+              type='email'
+              placeholder='Email Address'
+              name='email'
               value={email}
               onChange={onChange}
-              required
             />
           </div>
-          <div className="form-group">
+          <div className='form-group'>
             <input
-              type="password"
-              placeholder="Password"
-              name="password"
+              type='password'
+              placeholder='Password'
+              name='password'
               value={password}
               onChange={onChange}
-              minLength="6"
             />
           </div>
           <input
-            type="submit"
-            className="btn btn-primary btn-block"
-            value="Log In"
+            type='submit'
+            className='btn btn-primary btn-block'
+            value='Log In'
           />
         </form>
-        <div className="forgotLink text-primary">
-          <Link to="/resetPassword">Having trouble logging in?</Link>
+        <div className='forgotLink text-primary'>
+          <Link to='/resetPassword'>Having trouble logging in?</Link>
         </div>
-        <div className="loginSignUpSeparator">
-          <span className="textInSeparator">or</span>
+        <div className='loginSignUpSeparator'>
+          <span className='textInSeparator'>or</span>
           <p>
             Don't have an account?{' '}
-            <Link to="/register">
+            <Link to='/register'>
               <strong>Register</strong>
             </Link>
           </p>

@@ -1,13 +1,13 @@
-import {
-  GET_POSTS,
-  POST_ERROR,
-  UPDATE_LIKES,
-  DELETE_POST,
-  ADD_POST,
-  GET_POST,
-  ADD_COMMENT,
-  REMOVE_COMMENT,
-} from '../actions/types';
+// import {
+//   GET_POSTS,
+//   POST_ERROR,
+//   UPDATE_LIKES,
+//   DELETE_POST,
+//   ADD_POST,
+//   GET_POST,
+//   ADD_COMMENT,
+//   REMOVE_COMMENT,
+// } from '../actions/types';
 
 const initialState = {
   posts: [],
@@ -17,9 +17,9 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-  const { type, payload } = action;
+  //const { type, payload } = action;
 
-  switch (type) {
+  switch (action.type) {
     default:
       return state;
   }
