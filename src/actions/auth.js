@@ -12,14 +12,37 @@ import {
 
 // Load User
 export const loadUser = () => async (dispatch) => {
+  console.log('loadUser ---> INSIDE');
+
   try {
     const res = await api.get('/auth');
+    console.log('loadUser ---> res = ', res);
 
     dispatch({
       type: USER_LOADED,
       payload: res.data,
     });
   } catch (err) {
+    console.log('XXXXXXXXXXXXXXX loadUser ---> err = ', err);
+
+    if (!err.response) {
+      console.log('XXXXXXXXXXXXXXX loadUser ---> !err.response = ', err);
+
+      dispatch(
+        setAlert('Network Error not able to connect to backend', 'danger')
+      );
+    } else {
+      // http status code
+      const code = err.response.status;
+      // response data
+      const response = err.response.data;
+    }
+    // const errors = err.response.data.errors;
+
+    // if (errors) {
+    //   errors.forEach((error) => dispatch(setAlert(error.msg, 'danger')));
+    // }
+
     dispatch({
       type: AUTH_ERROR,
     });
